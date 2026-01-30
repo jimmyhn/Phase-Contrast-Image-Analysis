@@ -1,0 +1,7 @@
+### If PyTorch does not work refer to:
+Install PyTorch for your system from:
+https://pytorch.org/get-started/locally/
+
+This project was tested with:
+- torch 2.0.0
+- torchvision 0.15.1

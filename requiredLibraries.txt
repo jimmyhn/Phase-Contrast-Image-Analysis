@@ -1,0 +1,11 @@
+numpy
+pandas>=2.0
+matplotlib
+torch==2.0.0+cu11
+torchvision==0.15.1
+Pillow
+scikit-image
+seaborn
+scipy
+openpyxl
+cellSAM

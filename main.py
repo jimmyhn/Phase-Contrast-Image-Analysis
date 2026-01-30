@@ -233,7 +233,7 @@ GY_threshold = 37500 # pixel value of when they are green/yellow
 filter_threshold = 0.40 # the percentage of how much green/yellow there needs to before it considered not a cell
 
 user = "Nasim"
-images_in_sheets = False
+images_in_sheets = True
 type_of_outlier_filter = 'percentile' # choose 'bounds', 'interquartile', 'percentile'
 lowerBound = 200
 upperBound = 1000
