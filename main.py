@@ -46,7 +46,10 @@ def csAnalyze(img_array,img_name,quadrant=None):
         img_3d = np.stack([img, img, img], axis=-1) # Stacks 3 of the 2D image (gray-scale) on top of each other making 3D image for cellSAM
 
         # Apply CellSAM
-        device = torch.device('cuda') # Defines the device as being the GPU
+        device = torch.device('cuda' if torch.cuda.is_available() else 'cpu') # Defines the device as being the GPU
+        if not torch.cuda.is_available():
+            print("There is no compatible CUDA-enabled GPU is detected, using CPU as default")
+
         result = segment_cellular_image(img_3d, device=str(device)) # Segments the cells of the 3D image using the specified device
         # results = [mask, embedding, bounding_boxes]
         mask = result[0] # indexing only the mask to be saved aa a variable
@@ -216,7 +219,6 @@ def saveArray(array, filename, folderPath, sampleFolder, formatType):
 
 class ImageFileWarning(Warning):
     pass
-
 
 
 # MAIN Script:
